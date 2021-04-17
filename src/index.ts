@@ -1,4 +1,5 @@
 import express from 'express';
+import '@controllers/JobController';
 
 const app = express();
 
