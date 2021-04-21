@@ -14,6 +14,10 @@ export class DashboardController {
     const allJobs = await jobRepository.find();
     const profile = await profileRepository.findOne(1);
 
+    if (!profile) {
+      res.redirect('/profile')
+    }
+
     let statusCount = {
       progress: 0,
       done: 0,

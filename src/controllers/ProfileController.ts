@@ -11,12 +11,28 @@ export class ProfileController {
 
     const profile = await profileRepository.findOne(1)
     
-    return res.render("profile", { profile })
+    if (profile) {
+      return res.render("profile", { profile })
+    } else {
+      const profileNull = {
+        name: '',
+        avatar: '',
+        value_hour: '',
+        monthly_budget: '',
+        hours_per_day: '',
+        days_per_week: '',
+        vacation_per_year: ''
+      }
+
+      return res.render("profile", { profile: profileNull })
+    }
+    
   }
 
   // POST 
   async update(req:Request, res:Response) {
     const data = req.body
+
     // definir quantas semanas tem em um ano
     const weeksPerYear = 52
     // remover as semanas de férias do ano
@@ -32,17 +48,34 @@ export class ProfileController {
 
     const profile = await profileRepository.findOne(1)
 
-    await getConnection()
-      .createQueryBuilder()
-      .update(ProfileModels)
-      .set({ 
-        ...profile,
-        ...data,
-        "value_hour": valueHour
-      })
-      .where("id = :id", { id: 1 })
-      .execute();
+    if (!profile) {
+      const newProfile = profileRepository.create({
+        name: data.name, 
+        avatar: data.avatar,
+        monthly_budget: Number(data.monthly_budget),
+        hours_per_day: Number(data.hours_per_day),
+        days_per_week: Number(data.days_per_week),
+        vacation_per_year: Number(data.vacation_per_year),
+        value_hour: valueHour
+      });
 
-    return res.redirect('/profile')
+      await profileRepository.save(newProfile);
+
+      return res.redirect('/profile')
+    } else {
+      await getConnection()
+        .createQueryBuilder()
+        .update(ProfileModels)
+        .set({ 
+          ...profile,
+          ...data,
+          "value_hour": valueHour
+        })
+        .where("id = :id", { id: 1 })
+        .execute();
+
+      return res.redirect('/profile')
+    }
+    
   }
 }

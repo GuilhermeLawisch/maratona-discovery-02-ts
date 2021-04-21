@@ -27,11 +27,29 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML
 - CSS
-- JavaScript
+- JavaScript / TypeScript
 - NodeJS
 - EJS
 - Express
-- SQLite
+- TypeORM
+- MySQL
+
+## Como utilizar
+
+- Requisitos Iniciais
+Ter instalado um banco de dados (recomendo MySQL) 
+
+- Iniciando
+Clone esse repositório, eu recomendo que seja na raiz (C:) para não acontecer erros inesperados 
+
+Após clonar o projeto, crie o banco de dados que está na pasta db
+
+Depois de ter feito isso, execute esse comando para baixar a pasta node_modules
+`npm i`
+
+no arquivo ormconfig, adicione as configurações do banco de dados de sua preferência
+
+
 
 ## 💻 Projeto
 
