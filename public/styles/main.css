@@ -7,10 +7,10 @@
 
 /* custom vars */
 :root {
-  --color-background: #F0F2F5;
-  --color-text: #FCFDFF;
+  --color-background: #282a36;
+  --color-text: #f8f8f2;
 
-  --color-primary: #41414C;
+  --color-primary: #36364e;
   --color-secondary: #F1972C;
   --color-secondary-hover: #FA9C2D;
   
@@ -19,23 +19,53 @@
   --color-hairline-in-dark: #4F4F5B;
   --color-hairline-in-light: #E1E3E5;
 
-  --color-card-background: var(--color-text);
+  --color-card-background: var(--color-primary);
   --color-card-title: #5A5A66;
   --color-card-label: #BFBFCC;
   --color-card-content: #787880;
 
   --color-cancel: #E1E3E5;
-  --color-delete: #EB3B35; 
-  --color-save: #36B336;
+  --color-delete: #ee0000; 
+  --color-save: #2dbe28;
   
   --color-badge-progress-text: var(--color-save);
-  --color-badge-progress-background: #E8F8E8;
+  --color-badge-progress-background: #ffffff;
   --color-badge-done-text: var(--color-delete);
-  --color-badge-done-background:#FAECEB;
+  --color-badge-done-background:#ffffff;
 
   --color-header-inner-title: var(--color-card-label)
 
+  /* DRACULA COLORS */
+  --background-dracula:	#282a36;
+  --current-line-dracula:	#44475a;
+  --selection-dracula:	#44475a;
+  --foreground-dracula:	#f8f8f2;
+  --comment-dracula:	#425797;
+  --cyan:	#8be9fd;
+  --green:	#50fa7b;
+  --orange:	#ffb86c;
+  --pink:	#ff79c6;
+  --purple:	#bd93f9;
+  --red:	#ff5555;
+  --yellow:	#f1fa8c;
+
 }
+
+/*
+Palette	Hex	RGB	HSL	Color Picker Boxes
+Background	#282a36	40 42 54	231° 15% 18%	Background Color
+Current Line	#44475a	68 71 90	232° 14% 31%	Current Line Color
+Selection	#44475a	68 71 90	232° 14% 31%	Selection Color
+Foreground	#f8f8f2	248 248 242	60° 30% 96%	Foreground Color
+Comment	#6272a4	98 114 164	225° 27% 51%	Comment Color
+Cyan	#8be9fd	139 233 253	191° 97% 77%	Cyan Color
+Green	#50fa7b	80 250 123	135° 94% 65%	Green Color
+Orange	#ffb86c	255 184 108	31° 100% 71%	Orange Color
+Pink	#ff79c6	255 121 198	326° 100% 74%	Pink Color
+Purple	#bd93f9	189 147 249	265° 89% 78%	Purple Color
+Red	#ff5555	255 85 85	0° 100% 67%	Red Color
+Yellow	#f1fa8c	241 250 140	65° 92% 76%	Yellow Color
+*/
 
 /* user-agent font-size is 16px, let's make it responsive */
 @media(max-width: 1080px) {

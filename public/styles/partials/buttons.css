@@ -23,12 +23,12 @@ button.button {
 }
 
 .button.orange {
-  background: var(--color-secondary);
+  background: var(--comment-dracula);
   color: var(--color-text);
 }
 
 .button.orange:hover {
-  background: #FA9C2D
+  background: #48598d
 }
 
 .button.green {

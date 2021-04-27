@@ -1,8 +1,8 @@
 .card {
-  background: var(--color-text);
+  background: var(--selection-dracula);
   border-radius: 0.313rem;
-  border: 1px solid #E1E3E6;
-  color: #5A5A66;
+  border: 1px solid var(--cyan);
+  color: var(--foreground-dracula);
 
   padding: 1.5rem;
 
