@@ -15,7 +15,7 @@ export class DashboardController {
     const profile = await profileRepository.findOne(1);
 
     if (!profile) {
-      res.redirect('/profile')
+      res.status(200).redirect('/profile')
     }
 
     let statusCount = {
@@ -45,6 +45,6 @@ export class DashboardController {
 
     const freeHours = profile['hours_per_day'] - jobTotalHours;
 
-    return res.render("index", { jobs: updatedJobs, profile: profile, statusCount, freeHours });
+    return res.status(200).render("index", { jobs: updatedJobs, profile: profile, statusCount, freeHours });
   }
 }

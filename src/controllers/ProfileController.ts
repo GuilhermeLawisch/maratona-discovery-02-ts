@@ -12,7 +12,7 @@ export class ProfileController {
     const profile = await profileRepository.findOne(1)
     
     if (profile) {
-      return res.render("profile", { profile })
+      return res.status(200).render("profile", { profile })
     } else {
       const profileNull = {
         name: '',
@@ -24,7 +24,7 @@ export class ProfileController {
         vacation_per_year: ''
       }
 
-      return res.render("profile", { profile: profileNull })
+      return res.status(200).render("profile", { profile: profileNull })
     }
     
   }
@@ -61,7 +61,7 @@ export class ProfileController {
 
       await profileRepository.save(newProfile);
 
-      return res.redirect('/profile')
+      return res.status(201).redirect('/profile')
     } else {
       await getConnection()
         .createQueryBuilder()
@@ -74,7 +74,7 @@ export class ProfileController {
         .where("id = :id", { id: 1 })
         .execute();
 
-      return res.redirect('/profile')
+      return res.status(200).redirect('/profile')
     }
     
   }

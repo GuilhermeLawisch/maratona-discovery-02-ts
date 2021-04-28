@@ -24,12 +24,12 @@ class JobController {
       }
     })
     if (!job) {
-      return res.send('Job not found!')
+      return res.status(404).send('Job not found!')
     }
 
     let jobBudget = jobUtils.calculateBudget(Number(job["total_hours"]), Number(profile["value_hour"]))
 
-    return res.render("job-edit", { job, jobBudget })
+    return res.status(200).render("job-edit", { job, jobBudget })
   }
   async create(req:Request, res:Response) {
     return res.render("job")
@@ -49,7 +49,7 @@ class JobController {
 
     await jobRepository.save(job);
 
-    return res.redirect('/')
+    return res.status(201).redirect('/')
   }
   async update(req:Request, res:Response) {
     const jobId = req.params.id
@@ -65,7 +65,7 @@ class JobController {
       .where("id = :id", { id: jobId })
       .execute();
 
-    res.redirect('/')
+    res.status(200).redirect('/')
   }
   async delete(req:Request, res:Response) {
     const jobId = req.params.id
@@ -77,7 +77,7 @@ class JobController {
       .where("id = :id", { id: jobId })
       .execute();
 
-    return res.redirect('/')
+    return res.status(200).redirect('/')
   }
 }
 

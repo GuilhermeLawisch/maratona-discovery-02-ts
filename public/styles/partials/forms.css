@@ -42,7 +42,7 @@ input {
   font-family: IBM Plex Sans;
   font-weight: 500;
 
-  background: #FCFDFF;
+  background: rgb(237, 220, 255);
 
   border: 1px solid var(--purple);
   border-radius: .313rem;
