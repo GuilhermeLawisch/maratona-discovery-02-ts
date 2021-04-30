@@ -17,11 +17,11 @@ export class ProfileController {
       const profileNull = {
         name: '',
         avatar: '',
-        value_hour: '',
         monthly_budget: '',
         hours_per_day: '',
         days_per_week: '',
-        vacation_per_year: ''
+        vacation_per_year: '',
+        value_hour: ''
       }
 
       return res.status(200).render("profile", { profile: profileNull })

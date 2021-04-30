@@ -5,24 +5,24 @@ export class ProfileModels {
   @PrimaryGeneratedColumn()
   id: number
 
-  @Column(/*"varchar", { length: 100 }*/)
+  @Column()
   name: string
   
-  @Column(/*"varchar", { length: 250 }*/)
+  @Column()
   avatar: string
 
-  @Column(/*"int"*/)
+  @Column()
   monthly_budget: number
 
-  @Column(/*"int"*/)
+  @Column()
   days_per_week: number
 
-  @Column(/*"int"*/)
+  @Column()
   hours_per_day: number
 
-  @Column(/*"int"*/)
+  @Column()
   vacation_per_year: number
 
-  @Column(/*"int"*/)
+  @Column()
   value_hour: number
 }

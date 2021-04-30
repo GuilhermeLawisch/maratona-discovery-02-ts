@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="JobsCalc" title="JobsCalc" src="./image_index.png" width="750px" />
+  <img alt="JobsCalc" title="JobsCalc" src="./.github/image_index.png" width="750px" />
 </h1>
 
 <p align="center">
@@ -69,4 +69,3 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](.github/LICENSE.
 ---
 
 Feito com ♥ by Rocketseat :wave: e aprimorado por Guilherme Lawisch
-
