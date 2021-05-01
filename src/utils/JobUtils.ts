@@ -2,7 +2,9 @@ class JobUtils {
   remainingDays(job) {
     const remainingDays = (job["total_hours"] / job["daily_hours"]).toFixed()
   
-    const createdDate = new Date(job.create_at)                   // dia criado formato normal
+    const dateCorrect = String(job.create_at).slice(0, -7)
+
+    const createdDate = new Date(dateCorrect)                   // dia criado formato normal
     const dueDay = createdDate.getDate() + Number(remainingDays)  // dia criado mais dias que faltam formato normal
     const dueDate = createdDate.setDate(dueDay)                   // dia entrega formato ms
   

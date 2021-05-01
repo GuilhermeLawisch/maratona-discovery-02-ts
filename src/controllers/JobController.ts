@@ -41,6 +41,10 @@ class JobController {
 
     const jobRepository = getCustomRepository(JobRepository)
 
+    if (name === '' || daily_hours === '' || total_hours === '') {
+      return res.status(400).redirect("/job")
+    }
+
     const job = jobRepository.create({
       name, 
       daily_hours, 

@@ -11,7 +11,11 @@ export class DashboardController {
 
     const jobUtils = new JobUtils
 
-    const allJobs = await jobRepository.find();
+    const allJobs = await jobRepository.find({
+      order: {
+        create_at: "ASC"
+      }
+    });
     const profile = await profileRepository.findOne(1);
 
     if (!profile) {
